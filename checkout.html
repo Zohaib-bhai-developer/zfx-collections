@@ -3,47 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Checkout | ZFX Collections</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <div class="cursor"></div>
 
 <section class="checkout-container">
+
   <h1>Secure Checkout</h1>
+
   <div class="checkout-box">
-    <div class="order-summary" id="orderSummary"></div>
+
+    <div class="order-summary" id="orderSummary">
+      <!-- Filled by JS -->
+    </div>
+
     <div class="payment-box">
-      <h2>Bank Transfer (Demo)</h2>
-      <p><strong>Bank:</strong> Demo Bank Pakistan</p>
+      <h2>Bank Transfer</h2>
+
+      <p><strong>Bank Name:</strong> Demo Bank Pakistan</p>
       <p><strong>Account Title:</strong> ZFX Collections</p>
       <p><strong>Account Number:</strong> 0000-1234-5678</p>
-      <p><strong>Delivery:</strong> PKR 1500</p>
-      <div class="note">Demo checkout only.</div>
-    </div>
-  </div>
-</section>
+      <p><strong>Branch:</strong> Karachi</p>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <h3>ZFX Collections</h3>
-      <p>Luxury Candles & Premium Men’s Shoes</p>
-      <p>© 2025 — Karachi, Pakistan</p>
+      <div class="note">
+        This is a demo checkout page.  
+        Real payments will be added later.
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="shop.html">Shop</a>
-      <a href="policies.html">Policies</a>
-    </div>
+
   </div>
-</footer>
+
+</section>
 
 <script src="js/products.js"></script>
 <script src="js/app.js"></script>
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
+
 const product = products.find(p => p.id === productId);
 const shipping = 1500;
 
@@ -58,5 +61,6 @@ if (product) {
   `;
 }
 </script>
+
 </body>
 </html>
