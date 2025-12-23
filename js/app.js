@@ -31,21 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const neonCursor = document.querySelector(".neon-cursor");
 
-  if (neonCursor && window.innerWidth > 768) {
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function moveCursor() {
-      neonCursor.style.transform = `translate(${mouseX + 4}px, ${mouseY + 4}px)`;
-      requestAnimationFrame(moveCursor);
-    }
-
-    moveCursor();
-  }
-
-});
+if (neonCursor) {
+  document.addEventListener("mousemove", (e) => {
+    neonCursor.style.left = e.clientX + "px";
+    neonCursor.style.top = e.clientY + "px";
+  });
+}
