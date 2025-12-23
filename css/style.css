@@ -1,0 +1,130 @@
+:root {
+  --gold-main: #d4af37;
+  --gold-soft: #f5d98b;
+  --dark-bg: #050505;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--dark-bg);
+  color: var(--gold-soft);
+  font-family: 'Inter', sans-serif;
+  cursor: none;
+}
+
+.hero {
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+}
+
+.hero-glow {
+  position:absolute;
+  width:600px;
+  height:600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  filter: blur(80px);
+  animation: pulse 6s infinite;
+}
+
+@keyframes pulse {
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+}
+
+.brand-title {
+  font-family:'Cinzel', serif;
+  font-size:4rem;
+  letter-spacing:3px;
+  text-shadow:0 0 30px rgba(212,175,55,0.6);
+}
+
+.tagline { margin-top:20px; opacity:0.8; }
+
+.cta {
+  margin-top:40px;
+  padding:16px 46px;
+  border:1px solid var(--gold-main);
+  color:var(--gold-main);
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta::before {
+  content:'';
+  position:absolute;
+  width:0;
+  height:100%;
+  left:0;
+  top:0;
+  background:var(--gold-main);
+  z-index:-1;
+  transition:.4s;
+}
+
+.cta:hover::before { width:100%; }
+.cta:hover { color:black; }
+
+.shop-hero { padding:100px 40px; text-align:center; }
+
+.product-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  padding:60px;
+}
+
+.product-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.3);
+  padding:25px;
+  border-radius:16px;
+  transition:.5s;
+}
+
+.product-card:hover {
+  transform:translateY(-12px);
+  box-shadow:0 30px 80px rgba(212,175,55,0.25);
+}
+
+.product-card img {
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+footer {
+  background:#030303;
+  padding:80px 40px;
+  border-top:1px solid rgba(212,175,55,0.25);
+  margin-top:120px;
+}
+
+.footer-inner {
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.footer-links { text-align:right; }
+.footer-links a { color:var(--gold-main); text-decoration:none; display:block; }
+
+.cursor {
+  width:35px;
+  height:35px;
+  border:2px solid var(--gold-main);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  box-shadow:0 0 25px rgba(212,175,55,0.7);
+  transform:translate(-50%,-50%);
+  z-index:9999;
+}
